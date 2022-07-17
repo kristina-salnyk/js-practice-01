@@ -2,10 +2,10 @@ const categories = document.querySelector('ul#categories').querySelectorAll('li.
 
 console.log(`Number of categories: ${categories.length}`);
 
-categories.forEach(category => {
+categories.forEach(categoryRef => {
   console.log(
-    `Category: ${category.querySelector('h2').textContent} \nElements: ${
-      category.querySelectorAll('li').length
+    `Category: ${categoryRef.querySelector('h2').textContent} \nElements: ${
+      categoryRef.querySelectorAll('li').length
     }`
   );
 });
