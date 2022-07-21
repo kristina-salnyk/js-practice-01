@@ -2,11 +2,11 @@ const categories = document.querySelectorAll('ul#categories > li.item');
 
 console.log(`Number of categories: ${categories.length}`);
 
-const getCategoryMessage = categoryRef =>
-  `Category: ${categoryRef.querySelector('h2').textContent}\nElements: ${
-    categoryRef.querySelectorAll('li').length
+const getCategoryMessage = categoryItemRef =>
+  `Category: ${categoryItemRef.querySelector('h2').textContent}\nElements: ${
+    categoryItemRef.querySelectorAll('li').length
   }`;
 
-categories.forEach(categoryRef => {
-  console.log(getCategoryMessage(categoryRef));
+categories.forEach(categoryItemRef => {
+  console.log(getCategoryMessage(categoryItemRef));
 });

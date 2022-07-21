@@ -1,6 +1,6 @@
 const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 
-const ingredientsRef = document.querySelector('ul#ingredients');
+const ingredientsListRef = document.querySelector('ul#ingredients');
 
 const createIngredientItem = ingredient => {
   const newItemRef = document.createElement('li');
@@ -13,4 +13,4 @@ const createIngredientItem = ingredient => {
 
 const ingredientItems = ingredients.map(ingredient => createIngredientItem(ingredient));
 
-ingredientsRef.append(...ingredientItems);
+ingredientsListRef.append(...ingredientItems);
