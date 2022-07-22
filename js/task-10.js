@@ -14,7 +14,6 @@ const getNextBoxItemSizes = () => {
 
   if (lastBoxItemRef === null) return { width: 30, height: 30 };
 
-  console.log(lastBoxItemRef.style.width);
   return {
     width: Number.parseInt(lastBoxItemRef.style.width) + 10,
     height: Number.parseInt(lastBoxItemRef.style.height) + 10,
@@ -29,9 +28,7 @@ const createBoxes = amount => {
     const newBoxItemRef = document.createElement('div');
     newBoxItemRef.style.width = `${nextBoxItemSizes.width}px`;
     newBoxItemRef.style.height = `${nextBoxItemSizes.height}px`;
-    const newBoxColor = getRandomHexColor();
-    console.log(newBoxColor);
-    newBoxItemRef.style.backgroundColor = newBoxColor;
+    newBoxItemRef.style.backgroundColor = getRandomHexColor();
 
     boxItems.push(newBoxItemRef);
 
@@ -52,8 +49,10 @@ const createBtnClickHandler = () => {
   createBoxes(amount);
 };
 
+const destroyBoxes = () => {
+  boxesBlockRef.innerHTML = '';
+};
+
 createBtnRef.addEventListener('click', createBtnClickHandler);
 
-destroyBtnRef.addEventListener('click', () => {
-  boxesBlockRef.innerHTML = '';
-});
+destroyBtnRef.addEventListener('click', destroyBoxes);
